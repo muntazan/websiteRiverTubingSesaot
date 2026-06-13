@@ -1,0 +1,605 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Rivertubing Sesaot | Cinematic Adventure</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Montserrat:wght@700;800&amp;family=Plus+Jakarta+Sans:wght@600&amp;display=swap" rel="stylesheet">
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+                    "primary-fixed": "#dae2ff",
+                    "on-error": "#690005",
+                    "on-primary-fixed": "#001946",
+                    "tertiary-container": "#cf4b00",
+                    "surface-variant": "#32343e",
+                    "on-primary-container": "#ffffff",
+                    "inverse-primary": "#0057ce",
+                    "error-container": "#93000a",
+                    "secondary": "#bec6dc",
+                    "on-tertiary": "#5a1c00",
+                    "on-background": "#e1e2ee",
+                    "outline": "#8c90a1",
+                    "tertiary": "#ffb599",
+                    "on-tertiary-container": "#ffffff",
+                    "inverse-surface": "#e1e2ee",
+                    "secondary-fixed": "#dae2f8",
+                    "on-secondary": "#283141",
+                    "secondary-container": "#41495b",
+                    "background": "#10131b",
+                    "secondary-fixed-dim": "#bec6dc",
+                    "tertiary-fixed": "#ffdbce",
+                    "surface-container-highest": "#32343e",
+                    "on-secondary-fixed-variant": "#3e4758",
+                    "surface-dim": "#10131b",
+                    "primary": "#b1c5ff",
+                    "surface-tint": "#b1c5ff",
+                    "error": "#ffb4ab",
+                    "on-secondary-fixed": "#131c2b",
+                    "tertiary-fixed-dim": "#ffb599",
+                    "on-tertiary-fixed-variant": "#7f2b00",
+                    "inverse-on-surface": "#2d3039",
+                    "primary-container": "#0d6efd",
+                    "on-tertiary-fixed": "#370e00",
+                    "on-surface-variant": "#c2c6d8",
+                    "on-secondary-container": "#b0b8cd",
+                    "on-primary": "#002c70",
+                    "surface-bright": "#363942",
+                    "outline-variant": "#424655",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-high": "#272a33",
+                    "on-primary-fixed-variant": "#00419e",
+                    "surface-container-lowest": "#0b0e16",
+                    "surface-container": "#1d1f28",
+                    "surface-container-low": "#191b24",
+                    "on-surface": "#e1e2ee",
+                    "primary-fixed-dim": "#b1c5ff",
+                    "surface": "#10131b"
+            },
+            borderRadius: {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            spacing: {
+                    "gutter": "2rem",
+                    "margin-mobile": "1.25rem",
+                    "section-padding": "8rem",
+                    "stack-lg": "4rem",
+                    "stack-sm": "0.5rem",
+                    "container-max": "1280px",
+                    "stack-md": "1.5rem"
+            },
+            fontFamily: {
+                    "headline-lg": ["Montserrat"],
+                    "label-caps": ["PlusJakartaSans"],
+                    "headline-md": ["Montserrat"],
+                    "button-text": ["PlusJakartaSans"],
+                    "display-hero": ["Montserrat"],
+                    "display-hero-mobile": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            fontSize: {
+                    "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                    "label-caps": ["14px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                    "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                    "button-text": ["16px", { "lineHeight": "1.0", "fontWeight": "600" }],
+                    "display-hero": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                    "display-hero-mobile": ["40px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                    "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                    "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { background: rgba(16, 19, 27, 0.6); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .glow-primary { box-shadow: 0 0 40px rgba(13, 110, 253, 0.3); }
+        .glow-primary-hover:hover { box-shadow: 0 0 60px rgba(13, 110, 253, 0.5); }
+        
+        /* Smooth scrolling */
+        html { scroll-behavior: smooth; }
+        
+        /* Basic AOS-like fade in */
+        .fade-in-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-in-up.visible { opacity: 1; transform: translateY(0); }
+
+        /* Masonry */
+        .masonry-grid { column-gap: 1.5rem; }
+        .masonry-item { break-inside: avoid; margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-2xl border-b border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] transition-all duration-500 backdrop-blur-md">
+<div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md font-extrabold text-on-surface tracking-tighter flex items-center" href="#"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE4LUPcoAIiYOJtmu-2CMrMIBy5NQ1zC3B4pzhZiDyxElaULITaXZawJApfJsSFbubLBc2je-O-QxVPs0j7Jr0gcAAzqNwQ9IuyOuuZiNJMistS-iZimfjcS2cwPpF86Zn0OWFOsmBTeiw0jLTb7bco2sBP2FdLWdqz0jHRMMrfOapwJy77NGgo8ThmOQg4I9ugWL9jSeib0a-KNO4Z0QGarneW0mcUBCWM2SFLsvbvH_CBKMas-P955XL_MR0qXLzDhe54S2XZN4o" alt="Rivertubing Sesaot Logo" class="h-12 w-auto inline-block mr-4">Rivertubing Sesaot</a>
+<div class="hidden md:flex gap-8 items-center font-button-text text-button-text">
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#home">Home</a>
+<a class="text-on-surface/80 hover:text-primary transition-colors hover:scale-105 duration-300" href="#about">About</a>
+<a class="text-on-surface/80 hover:text-primary transition-colors hover:scale-105 duration-300" href="#packages">Packages</a>
+<a class="text-on-surface/80 hover:text-primary transition-colors hover:scale-105 duration-300" href="#gallery">Gallery</a>
+<a class="text-on-surface/80 hover:text-primary transition-colors hover:scale-105 duration-300" href="#facilities">Facilities</a>
+<a class="text-on-surface/80 hover:text-primary transition-colors hover:scale-105 duration-300" href="#location">Location</a>
+</div>
+<a class="hidden md:inline-flex items-center justify-center bg-primary-container text-on-primary-container font-button-text text-button-text px-6 py-3 rounded-full hover:scale-105 transition-transform duration-300 glow-primary-hover glow-primary" href="#book">
+                Book Now
+            </a>
+<!-- Mobile Menu Button (Icon only) -->
+<button class="md:hidden text-on-surface p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden" id="home">
+<!-- Background Image with Overlay -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-background/70 bg-gradient-to-t from-background via-background/40 to-transparent z-10"></div>
+<img alt="River tubing hero image" class="w-full h-full object-cover object-center scale-105 transform animate-[pulse_20s_ease-in-out_infinite_alternate]" data-alt="A breathtaking, cinematic wide shot of crystal clear river water rushing through a lush, dense tropical jungle valley. Sunlight filters dramatically through the canopy, illuminating modern, bright blue river tubes navigating the rapids. The atmosphere is exhilarating, luxurious, and vibrant, set against deep green foliage and dark, wet river rocks. The composition creates a sense of high-end adventure tourism with rich contrast and deep shadows, embodying a premium 'Cinematic Adventure' visual style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTQCXXYOHnUvLk6xkv9hZLBgEfBru5_vb4DJDyCXNB4Vb7DRGrwYdtVjBqIjQ7ZaC3DLaMtlxS6_rSDFAdT0E7JRQXIrGM3JHN6KXtBVYEsdpiE81mvZAkPpuqaG7HrcJClnTzBKg6SUyeq1bUGLKpwajZkW2xlzAtN-XZo2r5DCJ2GzXeQLkZXOgEYke-c228-sgCaK5Qod3W_MfPAfN-nO2mpfFr7ENla7TpMffe0E0wY_lTHO0u-IZ9H2evFd6yJkqwpX8oRpg9">
+</div>
+<div class="relative z-20 max-w-container-max mx-auto px-gutter text-center flex flex-col items-center gap-stack-md fade-in-up visible">
+<h1 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero text-on-surface max-w-4xl mx-auto drop-shadow-2xl">
+                Adventure Through The Heart Of Nature
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Experience the beauty of Sesaot River with a safe, exciting and unforgettable river tubing adventure.
+            </p>
+<div class="flex flex-wrap justify-center gap-4 mt-4">
+<a class="inline-flex items-center justify-center bg-primary-container text-on-primary-container font-button-text text-button-text px-8 py-4 rounded-full hover:scale-105 transition-transform duration-300 glow-primary" href="#packages">
+                    Book Adventure
+                </a>
+<a class="inline-flex items-center justify-center glass-panel text-on-surface font-button-text text-button-text px-8 py-4 rounded-full hover:bg-white/5 transition-colors duration-300" href="#gallery">
+                    View Gallery
+                </a>
+</div>
+<div class="mt-8 flex items-center gap-2 text-on-surface-variant text-sm font-label-caps uppercase tracking-wider">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="">5.0/5 Rating (5000+ Visitors)</span>
+<span class="mx-2">•</span>
+<span class="">Open Daily</span>
+</div>
+</div>
+</header>
+<!-- Floating Stats Bar -->
+<div class="relative z-30 -mt-10 max-w-5xl mx-auto px-margin-mobile md:px-gutter">
+<div class="glass-panel rounded-xl p-8 flex flex-wrap justify-around items-center gap-8 shadow-2xl">
+<div class="flex flex-col items-center gap-2 text-center fade-in-up visible">
+<span class="font-headline-md text-headline-md text-primary-container">5000+</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Visitors</span>
+</div>
+<div class="flex flex-col items-center gap-2 text-center fade-in-up visible" style="transition-delay: 100ms;">
+<span class="font-headline-md text-headline-md text-primary-container">100%</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Safety</span>
+</div>
+<div class="flex flex-col items-center gap-2 text-center fade-in-up visible" style="transition-delay: 200ms;">
+<span class="font-headline-md text-headline-md text-primary-container">2.5 KM</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Track</span>
+</div>
+<div class="flex flex-col items-center gap-2 text-center fade-in-up visible" style="transition-delay: 300ms;">
+<span class="font-headline-md text-headline-md text-primary-container">4.9</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Rating</span>
+</div>
+</div>
+</div>
+<!-- About Section -->
+<section class="py-section-padding px-gutter max-w-container-max mx-auto" id="about">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center">
+<div class="relative h-[600px] rounded-xl overflow-hidden fade-in-up visible">
+<img alt="Sesaot river landscape" class="absolute inset-0 w-full h-full object-cover" data-alt="A majestic, high-resolution vertical shot of a cascading river in an Indonesian rainforest. The water is a deep, inviting teal, rushing over smooth, dark grey boulders. Lush, vibrant green ferns and moss cling to the riverbanks. Soft, moody, diffuse light filters through the dense canopy above, creating a serene yet adventurous atmosphere that perfectly aligns with a premium nature tourism brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoTk1yCamosDjvYctA4k0oQ31pe4DXfBBMH9_jv1LNLrx_OPxeRchQlc7T0KVPQ9gJ1wZq2H8qg-GvDq7trFIRngo0O76I3mmbW0ZdC4bTY3tguDDIJwid7FjTjkBEJ8S_P4ukIhDmKxilT_QM3CuoJ-v12hTVePf4MoXNa2jIMPtNf2SUbXCZ0h3cfFA2b_5euf4lApFh-mMX3jBxhXkjIl0DN0pHtktk7POO6vKQbM0TeQw2eFRb2qqO7jYQlwSddUOr82m1McpF">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="flex flex-col gap-stack-md fade-in-up visible">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Discover The Hidden Gem Of Lombok</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                    Wisata Bawak Goak in Sesaot offers an unparalleled river tubing experience. Navigate through crystal-clear waters, surrounded by ancient forests and the raw, cinematic beauty of Indonesian nature. Our professional team ensures a journey that is as safe as it is thrilling, providing a world-class adventure tailored for both thrill-seekers and families alike.
+                </p>
+<div class="mt-4">
+<a class="inline-flex items-center gap-2 text-primary-container font-button-text text-button-text hover:underline" href="#packages">
+                        Explore Our Packages <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us Section -->
+<section class="py-section-padding bg-surface-container-low" id="features">
+<div class="px-gutter max-w-container-max mx-auto">
+<div class="text-center mb-16 fade-in-up visible">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Why Choose Us</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Experience the highest standard of adventure tourism with our premium services.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="glass-panel p-8 rounded-xl flex flex-col gap-4 fade-in-up hover:-translate-y-2 transition-transform duration-300 visible">
+<span class="material-symbols-outlined text-4xl text-primary-container">verified_user</span>
+<h3 class="font-headline-md text-2xl text-on-surface">Professional Guides</h3>
+<p class="text-on-surface-variant">Expertly trained local guides dedicated to ensuring your safety and enjoyment throughout the journey.</p>
+</div>
+<div class="glass-panel p-8 rounded-xl flex flex-col gap-4 fade-in-up hover:-translate-y-2 transition-transform duration-300 visible" style="transition-delay: 100ms;">
+<span class="material-symbols-outlined text-4xl text-primary-container">health_and_safety</span>
+<h3 class="font-headline-md text-2xl text-on-surface">Safety First</h3>
+<p class="text-on-surface-variant">Top-tier safety equipment including premium life jackets and helmets for all participants.</p>
+</div>
+<div class="glass-panel p-8 rounded-xl flex flex-col gap-4 fade-in-up hover:-translate-y-2 transition-transform duration-300 visible" style="transition-delay: 200ms;">
+<span class="material-symbols-outlined text-4xl text-primary-container">water</span>
+<h3 class="font-headline-md text-2xl text-on-surface">Beautiful River</h3>
+<p class="text-on-surface-variant">Crystal clear waters flowing through an untouched, pristine tropical rainforest.</p>
+</div>
+<div class="glass-panel p-8 rounded-xl flex flex-col gap-4 fade-in-up hover:-translate-y-2 transition-transform duration-300 visible" style="transition-delay: 300ms;">
+<span class="material-symbols-outlined text-4xl text-primary-container">photo_camera</span>
+<h3 class="font-headline-md text-2xl text-on-surface">Free Documentation</h3>
+<p class="text-on-surface-variant">High-quality photos and videos of your adventure captured by our dedicated documentation team.</p>
+</div>
+<div class="glass-panel p-8 rounded-xl flex flex-col gap-4 fade-in-up hover:-translate-y-2 transition-transform duration-300 visible" style="transition-delay: 400ms;">
+<span class="material-symbols-outlined text-4xl text-primary-container">family_restroom</span>
+<h3 class="font-headline-md text-2xl text-on-surface">Family Friendly</h3>
+<p class="text-on-surface-variant">Safe and enjoyable routes specifically designed to accommodate families and children.</p>
+</div>
+<div class="glass-panel p-8 rounded-xl flex flex-col gap-4 fade-in-up hover:-translate-y-2 transition-transform duration-300 visible" style="transition-delay: 500ms;">
+<span class="material-symbols-outlined text-4xl text-primary-container">payments</span>
+<h3 class="font-headline-md text-2xl text-on-surface">Affordable Adventure</h3>
+<p class="text-on-surface-variant">Premium experiences offered at competitive and transparent pricing.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Tour Packages Section -->
+<section class="py-section-padding px-gutter max-w-container-max mx-auto" id="packages">
+<div class="text-center mb-16 fade-in-up visible">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Tour Packages</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Choose the perfect adventure that suits your thrill level.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:px-16 items-center">
+<!-- Package 1 -->
+<div class="glass-panel p-8 rounded-xl flex flex-col gap-6 fade-in-up visible">
+<div>
+<h3 class="font-headline-md text-3xl text-on-surface mb-2">Short Track</h3>
+<p class="text-xl text-primary-container font-bold">500 Meters</p>
+</div>
+<ul class="flex flex-col gap-4 text-on-surface-variant">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span> Professional Guide</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span> Helmet &amp; Life Jacket</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span> Free Documentation</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span> Rest Area Access</li>
+</ul>
+<a class="mt-4 inline-flex items-center justify-center border border-primary-container text-primary-container font-button-text text-button-text px-6 py-3 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300" href="#book">
+                Select Package
+            </a>
+</div>
+<!-- Package 2 -->
+<div class="glass-panel p-10 rounded-xl flex flex-col gap-6 fade-in-up glow-primary relative md:scale-105 border-primary-container/50 z-10 bg-surface/80 visible">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-container text-on-primary-container px-4 py-1 rounded-full font-label-caps text-sm tracking-wider shadow-lg">
+                MOST POPULAR
+            </div>
+<div>
+<h3 class="font-headline-md text-3xl text-on-surface mb-2">Long Track</h3>
+<p class="text-xl text-primary-container font-bold">2.5 Kilometers</p>
+</div>
+<ul class="flex flex-col gap-4 text-on-surface-variant">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span> Professional Guide</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span> Helmet &amp; Life Jacket</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span> Premium Documentation</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span> Rest Area Access</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span> Welcome Drink</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span> Local Snack</li>
+</ul>
+<a class="mt-4 inline-flex items-center justify-center bg-primary-container text-on-primary-container font-button-text text-button-text px-6 py-4 rounded-full hover:scale-105 transition-transform duration-300 glow-primary" href="#book">
+                Book Most Popular
+            </a>
+</div>
+</div>
+</section>
+<!-- Gallery Section -->
+<section class="py-section-padding bg-surface-container-lowest" id="gallery">
+<div class="px-gutter max-w-container-max mx-auto">
+<div class="text-center mb-16 fade-in-up visible">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Adventure Gallery</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Glimpses of the cinematic journey awaiting you.</p>
+</div>
+<div class="columns-1 sm:columns-2 lg:columns-3 masonry-grid fade-in-up visible">
+<div class="masonry-item relative group rounded-[20px] overflow-hidden">
+<img alt="River Tubing Action" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYu9P0frS2FUum9qevMqtgoLu7kF3Th50fqGMwX3Qhd5iP3-lcTo2eT4ZQQCWYmp_IknTxoOTTJWeCd9bIw37vF3XlZI-gaNitqVjHC8MjxMpPKBus_jXo8eFtxcBp9RqJxuNqbqNA4gLCk4jAPgakJ3xufXP0gSNVXLQK5H80CV6GwsTzZR4Lh5SHzQ4Da-va5BF2JN3GUgoZpqZdCnKxA0mS7Ihd-eZy0xfJNTYpoGp8wAd5nM-P2fJaUcqG1B9ZPei_-888rNNB">
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
+</div>
+</div>
+<div class="masonry-item relative group rounded-[20px] overflow-hidden">
+<img alt="Lush Forest" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZBTDLrow2RaNgtQbl6SlIXLgjkbNdnz_utOf36jZeHkKyBWIBEE8tT-Sq--G_t12LhETir1n-BuRFYBFnPrtGlenwLrd3nla080phtNQtYlglSJnruZ1CCNLNhdc_NczaYEs576mAg0mYMo-cEO0BRp_9Co2C7oTSP0y7yttQESwZqyu1Sc239SSuNWBwdRusJPam7oF9th7OJEy67Z6-ZXr0VT4qp_NSeQgG59bWtJlTrRkkKrp9SIAinJb5rOdK8sufFQeNdY7O">
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
+</div>
+</div>
+<div class="masonry-item relative group rounded-[20px] overflow-hidden">
+<img alt="Waterfalls" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAasFONHkbDbhbVtXqwDvUBqzEEs4F1SVBsdIkUFOfKNpnwQt2NvFMXeqJaWCGNydqfg23_2wQXkFtDoSUdG75gvMx1Lur-szCcjcqnmwgo2d9xltbFjGWzDn_2WjnjhHz8-W1EeAeEqiTsDQjJ5Ww5UZNhP-OGGLl8edrxz3Js6hdQP7Zg2Ol0YxfChYCepvREdjVvxNnsm8GGtZBJaCaz491aVduyBtl15BJiAD4u6FwqnIaZdTiFBAhTpCkOE0ENUHs1EASQJwVR">
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
+</div>
+</div>
+<div class="masonry-item relative group rounded-[20px] overflow-hidden">
+<img alt="Friends Tubing" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAg_dDVG9ZPG7ZNKOhxgIpCHOYQK2hFJTriy6lNx1Kz6fZKOT8owihitALvzZrViGkQiF-VW99CqGKISDp-1s-zUr10s1FK4tGSGfx9HOMTm9QZ0X5Lwn5VrHl_G3so3LR7g8lYflPl-tzp1RYrEWjuHqSAenDOujuZ6ZmO53j1ItenWCh8t3SxOXfFC79JemP7dC3fGolV_tZt3F856EtoILBVD2w35sWeTDtjc_pO30LVbolIXlfy25576wt1ITFrclUH8kID5ZXR">
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
+</div>
+</div>
+<div class="masonry-item relative group rounded-[20px] overflow-hidden">
+<img alt="River Rapids" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIFLCw57-M07qdexU_35z83tF-zuD5c3ox1w9W1TZyQhJABfgF07l3ezsYb9LBB-Xse0jaE3uQy1IYO-FuczW-U1Hwa2QPvgzRffEmx1YWGpL5nsHHlrNrrGEqmY45qU1zOSV0f4M_wZeDQvERHC5R5LchWG4QWC89M9ejJYRTYQp2hUcRnwokxj1hDm0fOGwmIZOH6JIbUkzhGQrbshSppGpiLYg1K66O_TyhPxV-qQIwRhsMqAsO1AZ1ZQKcli1obiSyyTnGH1GU">
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
+</div>
+</div>
+<div class="masonry-item relative group rounded-[20px] overflow-hidden">
+<img alt="Nature View" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeyB-h8Rwu0t75ZgqWepmAJMzan1RuXS4m6erRhK0p5CTF2uQ6ksQhRX88Rgf2ApKAFeNuxl3nfpzwmk4d0AkspOVNgjDHvleUpbrNhkREV1qJ1Fa-_oGzNPHev4kEe-eLzPU2DtCs8_9cS4uhLay7uEvX4zTxupSDsOV8O2zFpEQPuUTOZujWvgkP_xWi2SwJjZRFteOUpUwCImKXjD2WUAsFU2SF6V6M94HmbAFCYxTZpijSuXqeF7SFNNGbsBhIDZBUz8MandRT">
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-section-padding px-gutter max-w-container-max mx-auto" id="testimonials">
+<div class="text-center mb-16 fade-in-up visible">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">What Adventurers Say</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Don't just take our word for it. Here are stories from our recent guests.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="glass-panel p-8 rounded-xl flex flex-col gap-4 fade-in-up visible">
+<div class="flex text-primary-container mb-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic flex-grow">"Absolutely breathtaking experience! The guides were professional, and the 2.5KM track was the perfect mix of relaxing floats and exciting rapids."</p>
+<div class="flex items-center gap-4 mt-4 pt-4 border-t border-white/10">
+<div class="w-12 h-12 rounded-full bg-surface-variant overflow-hidden">
+<img alt="Sarah J" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMEzfxum1X9XovOG-UtU8Bm1Env-1j8HTvzArHkF8kAwlZ1w3ae6r-11nUhoeOly5cV5e6eqzjc3sCDOOwX8tEKNHMzELEEouqlVkPN0v4KcZS5_LSZZZeOk2IVBVWUBS_Qz0F44oREiRTnWPdLV47WmP94iABdF4tgKcBzreZdCtP9bs4TO3Wk0CcAtr67o8NblEJanADltFpyfQe3Xq59f9mvDBnx1C3mAK4x3kln-aXSr3nIHWAkqvEK4IZqpXRtsHOEM-m8e3k">
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Sarah Jenkins</h4>
+<p class="text-sm text-on-surface-variant">Adventure Traveler</p>
+</div>
+</div>
+</div>
+<div class="glass-panel p-8 rounded-xl flex flex-col gap-4 fade-in-up visible" style="transition-delay: 100ms;">
+<div class="flex text-primary-container mb-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic flex-grow">"Brought my whole family and we felt safe the entire time. The free documentation was a huge plus, we have amazing photos to remember the trip."</p>
+<div class="flex items-center gap-4 mt-4 pt-4 border-t border-white/10">
+<div class="w-12 h-12 rounded-full bg-surface-variant overflow-hidden">
+<img alt="Michael T" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9qO6txHJGIwWSNV-AgkJP20BCb2utxRzrFGaIG7fJCxaCap7teyljp3b3YucmTzCw5EjnpVbXXp1jojyecTH07qkD8PVSU8qX47OOP-gubIcreDVBZvW43Z4fDlKusDQMqWFjO2X-mylZvv1F_ykKzrmwtRI_MqheVdbyf7fx9WqbMjMyjiKBlY2kX0PWz23yNUquFq76SmW8iNrMj0nCPBUxJPCH3jMB_EoGUq6DOVCEeIMiW5FplpAht9PZqisSrbllFEHDYts2">
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Michael Tan</h4>
+<p class="text-sm text-on-surface-variant">Family Trip</p>
+</div>
+</div>
+</div>
+<div class="glass-panel p-8 rounded-xl flex flex-col gap-4 fade-in-up visible" style="transition-delay: 200ms;">
+<div class="flex text-primary-container mb-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic flex-grow">"The scenery at Sesaot is unmatched. Flowing down the crystal clear river surrounded by dense jungle was like being in a movie. Highly recommend!"</p>
+<div class="flex items-center gap-4 mt-4 pt-4 border-t border-white/10">
+<div class="w-12 h-12 rounded-full bg-surface-variant overflow-hidden">
+<img alt="Budi S" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0-xXg9550CMyhr42rQiUAVG7v4ROp8EClSFBAQQFhEsBlZACxx78L4TZ3yXWLDoqFsX9GKdM3QCHflNanGO5rb9NKO2GHBPYaO687yTB6S96UiZheo4TWPxeBg5YaBuVWtAz3VQaRf56aQgsAVPSI9DsI_tE4AFdIYJIOQF63LNlJviUWuybpDQ8GfLRZrfRgEF0xTTtnVdUmhh5uv35UGRAaD4_Dth0HPuNYn-60PkCRPckqfO2l6r2nIxADZAzSrq3br3vwZxe_">
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Budi Santoso</h4>
+<p class="text-sm text-on-surface-variant">Local Explorer</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Facilities Section -->
+<section class="py-section-padding bg-surface-container-low" id="facilities">
+<div class="px-gutter max-w-container-max mx-auto">
+<div class="text-center mb-16 fade-in-up visible">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Our Facilities</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Everything you need for a comfortable and hassle-free experience.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+<div class="glass-panel p-6 rounded-xl flex flex-col items-center justify-center text-center gap-3 fade-in-up hover:bg-white/5 transition-colors visible">
+<span class="material-symbols-outlined text-3xl text-primary">mosque</span>
+<span class="font-button-text text-on-surface">Mushola</span>
+</div>
+<div class="glass-panel p-6 rounded-xl flex flex-col items-center justify-center text-center gap-3 fade-in-up hover:bg-white/5 transition-colors visible" style="transition-delay: 50ms;">
+<span class="material-symbols-outlined text-3xl text-primary">wc</span>
+<span class="font-button-text text-on-surface">Toilet</span>
+</div>
+<div class="glass-panel p-6 rounded-xl flex flex-col items-center justify-center text-center gap-3 fade-in-up hover:bg-white/5 transition-colors visible" style="transition-delay: 100ms;">
+<span class="material-symbols-outlined text-3xl text-primary">local_parking</span>
+<span class="font-button-text text-on-surface">Parking</span>
+</div>
+<div class="glass-panel p-6 rounded-xl flex flex-col items-center justify-center text-center gap-3 fade-in-up hover:bg-white/5 transition-colors visible" style="transition-delay: 150ms;">
+<span class="material-symbols-outlined text-3xl text-primary">deck</span>
+<span class="font-button-text text-on-surface">Rest Area</span>
+</div>
+<div class="glass-panel p-6 rounded-xl flex flex-col items-center justify-center text-center gap-3 fade-in-up hover:bg-white/5 transition-colors visible" style="transition-delay: 200ms;">
+<span class="material-symbols-outlined text-3xl text-primary">photo_camera</span>
+<span class="font-button-text text-on-surface">Documentation</span>
+</div>
+<div class="glass-panel p-6 rounded-xl flex flex-col items-center justify-center text-center gap-3 fade-in-up hover:bg-white/5 transition-colors visible" style="transition-delay: 250ms;">
+<span class="material-symbols-outlined text-3xl text-primary">checkroom</span>
+<span class="font-button-text text-on-surface">Changing Area</span>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-section-padding px-gutter max-w-container-max mx-auto" id="faq">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+<div class="fade-in-up visible">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Frequently Asked Questions</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Got questions? We've got answers to help you prepare for your river tubing adventure.</p>
+</div>
+<div class="flex flex-col gap-4 fade-in-up visible">
+<details class="glass-panel rounded-xl group" open="">
+<summary class="p-6 font-headline-md text-xl text-on-surface cursor-pointer flex justify-between items-center list-none outline-none">
+                    Is it safe for beginners?
+                    <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-primary">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant border-t border-white/5 pt-4 mt-2">
+                    Absolutely! Our river paths are carefully selected, and professional guides accompany you throughout the journey. Premium safety gear is mandatory and provided.
+                </div>
+</details>
+<details class="glass-panel rounded-xl group">
+<summary class="p-6 font-headline-md text-xl text-on-surface cursor-pointer flex justify-between items-center list-none outline-none">
+                    What should I bring?
+                    <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-primary">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant border-t border-white/5 pt-4 mt-2">
+                    We recommend bringing comfortable swimwear or light clothing, a change of clothes, a towel, and water-friendly footwear (sandals or water shoes). We handle all the safety gear.
+                </div>
+</details>
+<details class="glass-panel rounded-xl group">
+<summary class="p-6 font-headline-md text-xl text-on-surface cursor-pointer flex justify-between items-center list-none outline-none">
+                    How long does the adventure take?
+                    <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-primary">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant border-t border-white/5 pt-4 mt-2">
+                    The short track (500m) takes about 30-45 minutes. The popular long track (2.5km) typically takes 1.5 to 2 hours, depending on the river flow and group pace.
+                </div>
+</details>
+<details class="glass-panel rounded-xl group">
+<summary class="p-6 font-headline-md text-xl text-on-surface cursor-pointer flex justify-between items-center list-none outline-none">
+                    Are there age restrictions?
+                    <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-primary">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant border-t border-white/5 pt-4 mt-2">
+                    Participants generally need to be at least 7 years old. For younger children, please contact us in advance to discuss specific arrangements and ensure their safety.
+                </div>
+</details>
+</div>
+</div>
+</section>
+<!-- Location Section -->
+<section class="py-section-padding bg-surface-container-lowest" id="location">
+<div class="px-gutter max-w-container-max mx-auto">
+<div class="text-center mb-16 fade-in-up visible">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Our Location</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Wisata Bawak Goak, Sesaot, Narmada, Lombok Barat.</p>
+</div>
+<div class="glass-panel rounded-xl overflow-hidden h-[500px] relative fade-in-up p-2 visible">
+<div class="w-full h-full rounded-lg overflow-hidden bg-surface-variant flex items-center justify-center">
+<!-- Fallback/Placeholder for Map -->
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&amp;w=2074&amp;auto=format&amp;fit=crop')] bg-cover bg-center opacity-30 grayscale mix-blend-luminosity"></div>
+<div class="relative z-10 flex flex-col items-center text-center p-8 glass-panel rounded-xl max-w-md">
+<span class="material-symbols-outlined text-5xl text-primary-container mb-4">location_on</span>
+<h3 class="font-headline-md text-2xl text-on-surface mb-2">Wisata Bawak Goak</h3>
+<p class="text-on-surface-variant mb-6">Desa Sesaot, Kecamatan Narmada, Kabupaten Lombok Barat, Nusa Tenggara Barat</p>
+<a class="inline-flex items-center gap-2 bg-primary-container text-on-primary-container font-button-text px-6 py-3 rounded-full hover:scale-105 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined">directions</span> Get Directions
+                    </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="relative py-32 overflow-hidden flex items-center justify-center" id="book">
+<div class="absolute inset-0 z-0">
+<img alt="Jungle River" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTQCXXYOHnUvLk6xkv9hZLBgEfBru5_vb4DJDyCXNB4Vb7DRGrwYdtVjBqIjQ7ZaC3DLaMtlxS6_rSDFAdT0E7JRQXIrGM3JHN6KXtBVYEsdpiE81mvZAkPpuqaG7HrcJClnTzBKg6SUyeq1bUGLKpwajZkW2xlzAtN-XZo2r5DCJ2GzXeQLkZXOgEYke-c228-sgCaK5Qod3W_MfPAfN-nO2mpfFr7ENla7TpMffe0E0wY_lTHO0u-IZ9H2evFd6yJkqwpX8oRpg9">
+<div class="absolute inset-0 bg-background/80 backdrop-blur-sm"></div>
+</div>
+<div class="relative z-10 text-center px-gutter max-w-3xl mx-auto fade-in-up visible">
+<h2 class="font-display-hero-mobile md:font-headline-lg text-4xl md:text-5xl text-on-surface font-extrabold mb-6">Ready For Your Next Adventure?</h2>
+<p class="font-body-lg text-xl text-on-surface-variant mb-10">Book your unforgettable river tubing experience today. Contact our team via WhatsApp to secure your spot.</p>
+<a class="inline-flex items-center justify-center gap-3 bg-[#25D366] text-white font-button-text text-lg px-10 py-5 rounded-full hover:scale-105 transition-transform duration-300 shadow-[0_0_40px_rgba(37,211,102,0.4)] hover:shadow-[0_0_60px_rgba(37,211,102,0.6)]" href="https://wa.me/628837873140" target="_blank">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+            Book via WhatsApp
+        </a>
+</div>
+</section>
+<!-- SideNavBar (Floating Action Buttons) -->
+<div class="fixed bottom-8 right-8 flex flex-col gap-4 z-50 items-center">
+<!-- WhatsApp FAB -->
+<a aria-label="WhatsApp" class="bg-primary-container/80 backdrop-blur-xl text-on-primary-container rounded-full p-4 shadow-[0_0_20px_rgba(13,110,253,0.4)] hover:-translate-y-2 hover:shadow-primary transition-all duration-300 scale-110 active:scale-95 border border-white/20 flex items-center justify-center group" href="https://wa.me/628837873140" target="_blank">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+<span class="absolute right-full mr-4 bg-surface-container-highest px-3 py-1 rounded-full font-label-caps text-label-caps text-on-surface opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-white/10 pointer-events-none">WhatsApp</span>
+</a>
+<!-- Back to Top FAB -->
+<a aria-label="Back to Top" class="bg-surface-container-highest/80 backdrop-blur-xl text-on-surface rounded-full p-4 hover:-translate-y-2 hover:shadow-primary transition-all duration-300 scale-110 active:scale-95 border border-white/20 flex items-center justify-center group" href="#home">
+<span class="material-symbols-outlined">arrow_upward</span>
+<span class="absolute right-full mr-4 bg-surface-container-highest px-3 py-1 rounded-full font-label-caps text-label-caps text-on-surface opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-white/10 pointer-events-none">Back to Top</span>
+</a>
+</div>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-section-padding border-t border-outline-variant/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg px-gutter max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-2 flex flex-col gap-4">
+<span class="font-headline-md text-headline-md font-bold text-on-surface"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE4LUPcoAIiYOJtmu-2CMrMIBy5NQ1zC3B4pzhZiDyxElaULITaXZawJApfJsSFbubLBc2je-O-QxVPs0j7Jr0gcAAzqNwQ9IuyOuuZiNJMistS-iZimfjcS2cwPpF86Zn0OWFOsmBTeiw0jLTb7bco2sBP2FdLWdqz0jHRMMrfOapwJy77NGgo8ThmOQg4I9ugWL9jSeib0a-KNO4Z0QGarneW0mcUBCWM2SFLsvbvH_CBKMas-P955XL_MR0qXLzDhe54S2XZN4o" alt="Rivertubing Sesaot Logo" class="h-16 w-auto inline-block mr-4">Rivertubing Sesaot</span>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
+                    Cinematic adventure in the heart of Lombok. Experience the rush of pristine rivers and breathtaking landscapes.
+                </p>
+</div>
+<div class="col-span-1 flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps text-on-surface mb-2">Explore</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#about">About Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#packages">Packages</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#gallery">Gallery</a>
+</div>
+<div class="col-span-1 flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps text-on-surface mb-2">Information</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#facilities">Facilities</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#location">Location</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#contact">Contact Us</a>
+</div>
+</div>
+<div class="mt-16 px-gutter max-w-container-max mx-auto text-center font-body-md text-body-md text-on-surface-variant border-t border-white/5 pt-8">
+            © 2024 Rivertubing Sesaot. All rights reserved.
+        </div>
+</footer>
+<!-- Simple Intersection Observer for Animations -->
+<script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in-up').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>
